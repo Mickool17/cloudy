@@ -1,5 +1,5 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
-const kPrimaryClr = Color(0xff0C1823
-);
+const kPrimaryClr = Colors.black;
+
 const secndryColor = Color(0xff090135);

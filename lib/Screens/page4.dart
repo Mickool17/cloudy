@@ -1,13 +1,14 @@
-import 'package:cloudy/homescreen.dart';
+import 'package:app_settings/app_settings.dart';
+import 'package:cloudy/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:line_icons/line_icon.dart';
-import 'package:material_design_icons_flutter/icon_map.dart';
 
-class page4 extends StatelessWidget {
-  const page4({super.key});
+import 'homescreen.dart';
+
+class Page4 extends StatelessWidget {
+  const Page4({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class page4 extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: ((context) => homescreen())));
+                            builder: ((context) => const Homescreen())));
                   },
                   child: Icon(
                     Icons.arrow_back_ios_new_sharp,
@@ -37,9 +38,9 @@ class page4 extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: ((context) => homescreen())));
+                              builder: ((context) => const Homescreen())));
                     }),
-                    child: Image.asset("images/Dashboard.png"))
+                    child: const Icon(Icons.settings)),
               ],
             ),
           ),
@@ -58,7 +59,6 @@ class page4 extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontSize: 20.sp,
                     height: 1.105.h,
-                    color: Colors.black,
                   ),
                 ),
               ),
@@ -74,7 +74,10 @@ class page4 extends StatelessWidget {
               child: Column(
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => const cloudytheme()));
+                    },
                     child: Row(
                       children: [
                         Icon(
@@ -87,9 +90,9 @@ class page4 extends StatelessWidget {
                         SizedBox(
                           height: 24.h,
                           child: Text(
-                            "Account",
+                            "Appearance",
                             style: GoogleFonts.poppins(
-                                fontSize: 18.sp, fontWeight: FontWeight.w400),
+                                fontSize: 15.sp, fontWeight: FontWeight.w400),
                           ),
                         ),
                       ],
@@ -98,36 +101,46 @@ class page4 extends StatelessWidget {
                   SizedBox(
                     height: 16.h,
                   ),
-                  Row(
-                    children: [
-                      Icon(Icons.location_on_sharp, size: 18.sp),
-                      SizedBox(width: 10.w),
-                      Text(
-                        "Location",
-                        style: GoogleFonts.poppins(
-                            fontSize: 18, fontWeight: FontWeight.w400),
-                      ),
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                      AppSettings.openLocationSettings();
+                    },
+                    child: Row(
+                      children: [
+                        Icon(Icons.location_on_sharp, size: 18.sp),
+                        SizedBox(width: 10.w),
+                        Text(
+                          "Location",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15.sp, fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 16.h,
                   ),
-                  Row(
-                    children: [
-                      Icon(IconlyBold.notification, size: 18.sp),
-                      SizedBox(width: 10.w),
-                      Text(
-                        "Notifications",
-                        style: GoogleFonts.poppins(
-                            fontSize: 18, fontWeight: FontWeight.w400),
-                      ),
-                      const Spacer(),
-                      Icon(
-                        Icons.notifications_off_sharp,
-                        size: 18.sp,
-                        color: Colors.red,
-                      )
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                      AppSettings.openNotificationSettings();
+                    },
+                    child: Row(
+                      children: [
+                        Icon(IconlyBold.notification, size: 18.sp),
+                        SizedBox(width: 10.w),
+                        Text(
+                          "Notifications",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15.sp, fontWeight: FontWeight.w400),
+                        ),
+                        const Spacer(),
+                        Icon(
+                          Icons.notifications_off_sharp,
+                          size: 18.sp,
+                          color: Colors.red,
+                        )
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -149,7 +162,6 @@ class page4 extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   fontSize: 20.sp,
                   height: 1.105.h,
-                  color: Colors.black,
                 ),
               ),
             ),
@@ -164,7 +176,7 @@ class page4 extends StatelessWidget {
                     Text(
                       "Celsius",
                       style: GoogleFonts.poppins(
-                          fontSize: 18, fontWeight: FontWeight.w400),
+                          fontSize: 15.sp, fontWeight: FontWeight.w400),
                     ),
                     const Spacer(),
                     Container(
@@ -188,14 +200,14 @@ class page4 extends StatelessWidget {
                     Text(
                       "Fahrenheit",
                       style: GoogleFonts.poppins(
-                          fontSize: 18.sp, fontWeight: FontWeight.w400),
+                          fontSize: 15.sp, fontWeight: FontWeight.w400),
                     ),
                     const Spacer(),
                     Container(
                       height: 24.h,
                       width: 24.w,
                       decoration: const BoxDecoration(
-                        color: Colors.green,
+                        color: Colors.white,
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
@@ -229,7 +241,7 @@ class page4 extends StatelessWidget {
                         child: Text(
                           "terms and services",
                           style: GoogleFonts.poppins(
-                              fontSize: 18.sp, fontWeight: FontWeight.w400),
+                              fontSize: 15.sp, fontWeight: FontWeight.w400),
                         ),
                       ),
                     ],
@@ -251,7 +263,7 @@ class page4 extends StatelessWidget {
                         child: Text(
                           "About",
                           style: GoogleFonts.poppins(
-                              fontSize: 18.sp, fontWeight: FontWeight.w400),
+                              fontSize: 15.sp, fontWeight: FontWeight.w400),
                         ),
                       ),
                     ],
@@ -273,7 +285,7 @@ class page4 extends StatelessWidget {
                         child: Text(
                           "Report buggy buggy",
                           style: GoogleFonts.poppins(
-                              fontSize: 18.sp, fontWeight: FontWeight.w400),
+                              fontSize: 15.sp, fontWeight: FontWeight.w400),
                         ),
                       ),
                     ],

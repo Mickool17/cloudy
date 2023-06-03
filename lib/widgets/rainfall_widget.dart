@@ -1,4 +1,4 @@
-import 'package:cloudy/homescreen_pages/page1_viewmodel.dart';
+import 'package:cloudy/models/page1_viewmodel.dart';
 import 'package:flutter/material.dart';
 
 class Rainfall extends StatelessWidget {
@@ -7,11 +7,10 @@ class Rainfall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Column(children: [
+    return Column(children: [
     Container(
       
     )
-    ]));
+    ]);
   }
 }
