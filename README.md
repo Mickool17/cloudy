@@ -74,4 +74,4 @@ Requires Flutter 3.x (Dart 3). The WeatherAPI key lives in `lib/basemodel.dart` 
 
 ## Author
 
-**Oladimeji Micheal Tomisin**, Full-Stack & AI Engineer · GitHub: [@Mickool17](https://github.com/Mickool17)
+Built by [@Mickool17](https://github.com/Mickool17)
