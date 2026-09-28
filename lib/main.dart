@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           // You can use the library anywhere in the app even in theme
           theme: ThemeData(
     textTheme: TextTheme(
-      button: TextStyle(fontSize: 45.sp))),
+      labelLarge: TextStyle(fontSize: 45.sp))),
           home: child,
         );
       },

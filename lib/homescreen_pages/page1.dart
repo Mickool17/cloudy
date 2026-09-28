@@ -163,7 +163,7 @@ class _page1State extends State<page1> {
                         ? Rainfall(
                             viewModel: model,
                           )
-                        : Text('Not working'),
+                        : const SizedBox.shrink(),
                     SizedBox(
                       height: 25.sp,
                     ),

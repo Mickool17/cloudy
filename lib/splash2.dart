@@ -18,15 +18,12 @@ class _splash2State extends State<splash2> {
     return Scaffold(
       body: Stack(
         children: [
-          Align(
-            alignment: Alignment.topRight,
-            child: Positioned(
-                height: 343.h,
-                width: 343.sp,
-                top: -137.h,
-                left: 162.w,
-                child: Image.asset('images/splash2_star.png')),
-          ),
+          Positioned(
+              height: 343.h,
+              width: 343.sp,
+              top: -137.h,
+              left: 162.w,
+              child: Image.asset('images/splash2_star.png')),
           Positioned(
             //bottom: 70.sp,
             top: 312.sp,
